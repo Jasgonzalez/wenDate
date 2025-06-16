@@ -39,7 +39,7 @@
 
     <div class="question active" id="q1">
       <p>Who gives main character energy?</p>
-      <button onclick="nextQuestion('q1', 'q2', true)">Jason </button>
+      <button onclick="nextQuestion('q1', 'q2', true)">Jason</button>
       <button onclick="nextQuestion('q1', 'q2', false)">Ace</button>
       <button onclick="nextQuestion('q1', 'q2', false)">Nic</button>
     </div>
@@ -54,7 +54,7 @@
     <div class="question" id="q3">
       <p>Who do you want to couple up with?</p>
       <button onclick="nextQuestion('q3', 'loading', true)">Jason</button>
-      <button onclick="nextQuestion('q3', 'loading', false)">Chelley .. (Dont you dare click this)</button>
+      <button onclick="showMeme('q3')">Chelley .. (Don't you dare click this)</button>
       <button onclick="nextQuestion('q3', 'loading', false)">Taylor</button>
     </div>
   </div>
@@ -65,15 +65,15 @@
   </div>
 
   <div id="result" class="screen">
-    <h2>💌 Wen, seems like JEG likes you.. You guys are now coupled up!</h2>
-    <p>Here’s information on our upcoming dinner date:</p>
+    <h2>💌 Wen, You're Coupled Up!</h2>
+    <p>Here’s information on your upcoming dinner date:</p>
     <ul>
-      <li>👗 Dress Code: Fancy (I'm so excited to see you dressed up) </li>
+      <li>👗 Dress Code: Fancy (I'm so excited to see you dressed up)</li>
       <li>🍽️ Dinner at: <strong>Hell's Kitchen DC</strong></li>
       <li>📅 Date: <strong>Friday, June 20th</strong></li>
       <li>🕣 Time: <strong>8:30 PM</strong></li>
     </ul>
-    <p>⏳ Countdown to our first date:</p>
+    <p>⏳ Countdown to a night we'll never forget:</p>
     <div id="countdown"></div>
   </div>
 
@@ -83,6 +83,14 @@
     <button onclick="location.reload()">Retry</button>
   </div>
 
-  <script src="script.js"></script>
+  <div id="meme-popup" class="screen" style="display: none;">
+    <h2>You are somethin else ...</h2>
+    <img src="chelley_meme.jpg" alt="Meme" style="max-width: 90%; border-radius: 12px; margin-top: 1em;" />
+    <br />
+    <button onclick="closeMeme()">Sorry 😅</button>
+    <audio id="meme-sound" src="chelley_theme.mp4"></audio>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
