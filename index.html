@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoveCraft Island – Wen's Romantic Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="intro" class="screen active">
+    <h1>🌴 Welcome to LoveCraft Island, Wen 💖</h1>
+    <button onclick="showLogin()">Enter the Villa</button>
+  </div>
+
+  <div id="login" class="screen">
+    <p>For security reasons... Verify you're really Wen:</p>
+    <input type="password" id="password" placeholder="Enter your love code" />
+    <br /><br />
+    <button onclick="verifyPassword()">Unlock Paradise</button>
+    <p id="login-error" style="color: red; display: none;">Are you really Wen?</p>
+  </div>
+
+  <div id="instructions" class="screen">
+    <h2>Quick rundown:</h2>
+    <p>This is your chance to couple up with THE Jason Gonzalez – also known as JEG.<br>
+    💘 You’ve got 3 hearts. Choose wrong and lose one.<br>
+    💔 Lose them all, and this once-in-a-lifetime chance slips away...<br>
+    🧠 Choose wisely!</p>
+    <button onclick="startQuiz()">Click when ready!</button>
+  </div>
+
+  <div id="quiz" style="display: none;">
+    <div id="health-bar">
+      <img class="heart" src="minecraft.png" />
+      <img class="heart" src="minecraft.png" />
+      <img class="heart" src="minecraft.png" />
+    </div>
+
+    <div class="question active" id="q1">
+      <p>Who gives main character energy?</p>
+      <button onclick="nextQuestion('q1', 'q2', true)">Jason </button>
+      <button onclick="nextQuestion('q1', 'q2', false)">Ace</button>
+      <button onclick="nextQuestion('q1', 'q2', false)">Nic</button>
+    </div>
+
+    <div class="question" id="q2">
+      <p>Your perfect date in the villa is with:</p>
+      <button onclick="nextQuestion('q2', 'q3', true)">Jason</button>
+      <button onclick="nextQuestion('q2', 'q3', false)">Charlie</button>
+      <button onclick="nextQuestion('q2', 'q3', false)">Jeremiah</button>
+    </div>
+
+    <div class="question" id="q3">
+      <p>Who do you want to couple up with?</p>
+      <button onclick="nextQuestion('q3', 'loading', true)">Jason</button>
+      <button onclick="nextQuestion('q3', 'loading', false)">Chelley .. (Dont you dare click this)</button>
+      <button onclick="nextQuestion('q3', 'loading', false)">Taylor</button>
+    </div>
+  </div>
+
+  <div id="loading" class="screen" style="display: none;">
+    <h2>Running some calculations</h2>
+    <p>Placing torches... Building dinner table... Summoning JEG...</p>
+  </div>
+
+  <div id="result" class="screen">
+    <h2>💌 Wen, You're Coupled Up!</h2>
+    <p>Here’s information on your upcoming dinner date:</p>
+    <ul>
+      <li>👗 Dress Code: Fancy (I'm so excited to see you dressed up) </li>
+      <li>🍽️ Dinner at: <strong>Hell's Kitchen DC</strong></li>
+      <li>📅 Date: <strong>Friday, June 20th</strong></li>
+      <li>🕣 Time: <strong>8:30 PM</strong></li>
+    </ul>
+    <p>⏳ Countdown to a night we'll never forget:</p>
+    <div id="countdown"></div>
+  </div>
+
+  <div id="game-over" class="screen" style="display: none;">
+    <h2>You lost all your hearts.</h2>
+    <p id="game-over-message">You might want to try that again... lock in Wen</p>
+    <button onclick="location.reload()">Retry</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

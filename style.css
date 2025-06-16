@@ -1,0 +1,64 @@
+body {
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee); /* romantic Minecraft-y sky */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2em;
+  text-align: center;
+}
+
+.screen, .question, #result {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2em;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #000;
+  width: 100%;
+  max-width: 600px;
+}
+
+.question.active, .screen.active, #result.active {
+  display: block;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: 3px solid #c2185b;
+  padding: 1em 2em;
+  font-size: 1em;
+  border-radius: 8px;
+  box-shadow: 3px 3px #000;
+  cursor: pointer;
+  margin: 1em;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff85c1;
+  transform: scale(1.05);
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+}
+
+ul {
+  list-style: none;
+  font-size: 1em;
+  padding-left: 0;
+}
+
+#countdown {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 1em;
+  color: #ffeb3b;
+}
