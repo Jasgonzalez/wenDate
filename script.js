@@ -1,5 +1,7 @@
-let hearts = 3;
 let currentMemeQuestion = null;
+let totalCorrect = 0; // track correct answers
+let totalQuestions = 3; // total number of questions
+let hearts = 3; // initialize hearts
 
 function showLogin() {
   document.getElementById("intro").style.display = "none";
@@ -21,33 +23,51 @@ function startQuiz() {
   document.getElementById("quiz").style.display = "block";
 }
 
+
+
+
 function nextQuestion(currentId, nextId, isCorrect) {
   document.getElementById(currentId).classList.remove("active");
+
   if (isCorrect) {
-    document.getElementById(nextId).classList.add("active");
-    if (nextId === "loading") {
+    totalCorrect++;
+  } else {
+    hearts--;
+    const heartImages = document.querySelectorAll(".heart");
+    if (heartImages[hearts]) {
+      const heart = heartImages[hearts];
+      heart.classList.add("pop");
+      setTimeout(() => {
+        heart.style.visibility = "hidden";
+        heart.classList.remove("pop");
+      }, 600); // Match animation duration
+    }
+  }
+
+  const isLastQuestion = nextId === "loading";
+
+  if (isLastQuestion) {
+    if (totalCorrect === totalQuestions) {
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("loading").style.display = "block";
+
       setTimeout(() => {
         document.getElementById("loading").style.display = "none";
         document.getElementById("result").style.display = "block";
         startCountdown();
       }, 2000);
-      document.getElementById("loading").style.display = "block";
-      document.getElementById("quiz").style.display = "none";
-    }
-  } else {
-    hearts--;
-    const heartImages = document.querySelectorAll(".heart");
-    if (heartImages[hearts]) {
-      heartImages[hearts].style.visibility = "hidden";
-    }
-    if (hearts === 0) {
+    } else {
       document.getElementById("quiz").style.display = "none";
       document.getElementById("game-over").style.display = "block";
-    } else {
-      document.getElementById(nextId).classList.add("active");
+      document.getElementById("game-over-message").textContent =
+        "Seems like you had your eyes closed or something... try again ";
     }
+  } else {
+    document.getElementById(nextId).classList.add("active");
   }
 }
+
+
 
 function showMeme(currentId) {
   currentMemeQuestion = currentId;
@@ -95,3 +115,17 @@ if (distance <= 0) {
 function revealMessage() {
   document.getElementById("secret-message").style.display = "block";
 }
+
+function spawnFloatingHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart-float");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.textContent = "❤";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(spawnFloatingHeart, 800); // spawn every 0.8 seconds
