@@ -8,10 +8,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  padding: 2em;
+  padding: 1.5em;
   text-align: center;
   line-height: 1.8;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .screen, .question, #result {
@@ -112,4 +112,15 @@ input[type="password"] {
     font-size: 1em;
     padding: 0.6em;
   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceHeart {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }

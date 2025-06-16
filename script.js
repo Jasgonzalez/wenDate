@@ -67,7 +67,7 @@ function closeMeme() {
 }
 
 function startCountdown() {
-  const targetDate = new Date("June 20, 2025 20:30:00").getTime();
+  const targetDate = new Date("June 21, 2025 21:00:00").getTime();
   const countdownEl = document.getElementById("countdown");
 
   const interval = setInterval(() => {
