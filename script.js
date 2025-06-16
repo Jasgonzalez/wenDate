@@ -8,7 +8,7 @@ function showLogin() {
 
 function verifyPassword() {
   const pass = document.getElementById("password").value.trim().toLowerCase();
-  if (pass === "wen") {
+  if (pass === "orange") {
     document.getElementById("login").style.display = "none";
     document.getElementById("instructions").style.display = "block";
   } else {
@@ -85,4 +85,13 @@ function startCountdown() {
       countdownEl.innerHTML = `${days}d ${hrs}h ${mins}m ${secs}s`;
     }
   }, 1000);
+}
+if (distance <= 0) {
+  clearInterval(interval);
+  countdownEl.innerHTML = "It's time!";
+  document.getElementById("after-date-button").disabled = false;
+  document.getElementById("after-date-button").innerText = "💌 Click me when you're ready...";
+}
+function revealMessage() {
+  document.getElementById("secret-message").style.display = "block";
 }

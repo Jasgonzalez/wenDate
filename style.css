@@ -1,6 +1,6 @@
 body {
   font-family: 'Press Start 2P', cursive, sans-serif;
-  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
+  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee); /* romantic Minecraft-y sky */
   color: #fff;
   display: flex;
   justify-content: center;
@@ -63,4 +63,53 @@ ul {
   font-weight: bold;
   margin-top: 1em;
   color: #ffeb3b;
+}
+
+input[type="password"] {
+  font-size: 0.5em;
+  padding: 0.8em;
+  border-radius: 8px;
+  border: 2px solid #ff69b4;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #fff0f5;
+}
+
+#after-date-button {
+  margin-top: 1.5em;
+  font-size: 0.9em;
+  background-color: #444;
+  border: 3px solid #888;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+#after-date-button:enabled {
+  background-color: #32cd32;
+  border-color: #228b22;
+  color: #fff;
+  cursor: pointer;
+}
+
+#after-date-button:hover:enabled {
+  background-color: #3ee93e;
+}
+
+
+@media (max-width: 600px) {
+  body {
+    padding: 1em;
+  }
+
+  button {
+    font-size: 0.8em;
+    padding: 0.8em 1.2em;
+  }
+
+  input[type="password"] {
+    font-size: 1em;
+    padding: 0.6em;
+  }
 }

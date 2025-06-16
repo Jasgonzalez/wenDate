@@ -15,7 +15,7 @@
 
   <div id="login" class="screen">
     <p>For security reasons... Verify you're really Wen:</p>
-    <input type="password" id="password" placeholder="Enter your love code" />
+    <input type="password" id="password" placeholder="Enter password (hint: it's a color)" />
     <br /><br />
     <button onclick="verifyPassword()">Unlock Paradise</button>
     <p id="login-error" style="color: red; display: none;">Are you really Wen?</p>
@@ -65,7 +65,7 @@
   </div>
 
   <div id="result" class="screen">
-    <h2>💌 Wen, You're Coupled Up!</h2>
+    <h2>💌 Wen, seems like JEG likes you too..  You guys are now Coupled Up!</h2>
     <p>Here’s information on your upcoming dinner date:</p>
     <ul>
       <li>👗 Dress Code: Fancy (I'm so excited to see you dressed up)</li>
@@ -75,8 +75,14 @@
     </ul>
     <p>⏳ Countdown to our first date:</p>
     <div id="countdown"></div>
-  </div>
+    <button id="after-date-button" onclick="revealMessage()" disabled>
+  Click this after the date
+</button>
+<p id="secret-message" style="display: none; margin-top: 1em;">I just wanted to say... I think you're amazing Wen 💖</p>
 
+
+  </div>
+  
   <div id="game-over" class="screen" style="display: none;">
     <h2>You lost all your hearts.</h2>
     <p id="game-over-message">You might want to try that again... lock in Wen</p>
